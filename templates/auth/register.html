@@ -1,0 +1,29 @@
+{% extends 'general/base.html' %}
+
+
+
+{% block head %}
+<title>Login</title>
+{% endblock %}
+
+
+{% block body %}
+
+	
+	<div class="text-center">
+		<h2>Register{{message}}</h2>
+	</div>
+
+		<div class='col-sm-4 col-12'> 
+			<form method="POST">
+				{% csrf_token %}
+				{{form}}
+				<br>
+				<button type="submit" class="btn btn-info">Submit</button>
+
+			</form>
+		</div>
+
+
+
+{% endblock %}

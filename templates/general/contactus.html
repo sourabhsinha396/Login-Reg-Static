@@ -1,0 +1,42 @@
+{% extends 'general/base.html' %}
+{% load static %}
+
+
+{% block head %}
+<title>Contacttt</title>
+<link rel='stylesheet' href='{% static "css/main.css" %}' >
+{% endblock %}
+
+
+{% block body %}
+	
+	<div class="text-center">
+		<h2>{{Title}}</h2>
+	</div>
+	 <a href="{% url "general:login" %}">Login</a></li>
+	 <button type="submit"  class="btn btn-info" onclick="location.href='{% url 'general:login' %}'" name='mybtn2'>Login</button>
+	 <button type="submit"  class="btn btn-info" onclick="location.href='{% url 'general:register' %}'" name='mybtn2'>Register</button>
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<p>{{content}}</p>
+				<img src="{% static 'images/sloth.png' %}" class="img-fluid"  width="30%" height="30%" />
+				<div class='col-sm-6 col-12'> 
+				<form method="POST">
+					{% csrf_token %}
+					<input type='text' class='form-control' placeholder="Name" name='fullname'><br>
+					<textarea name='content'  class='form-control' placeholder="your content"></textarea><br>
+					<button type="submit" class="btn btn-info">Submit</button>
+
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+{% endblock %}
